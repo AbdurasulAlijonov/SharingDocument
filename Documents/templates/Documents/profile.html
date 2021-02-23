@@ -1,0 +1,57 @@
+{% extends 'Documents/userbase.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container mt-5">
+    <h2 class="text-center">Profile</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Full name :</b>
+        </div>
+        <div class="col-md-6" style="text-transform: capitalize">
+            <b>{{ data.user.last_name }}  {{ data.user.first_name }}</b>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Username :</b>
+        </div>
+        <div class="col-md-6">
+            <b>{{ data.user.username }}</b>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Email :</b>
+        </div>
+        <div class="col-md-6" >
+            <b>{{ data.user.email }}</b>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Phone Number :</b>
+        </div>
+        <div class="col-md-6" >
+            <b>{{ data.contact }}</b>
+        </div>
+    </div>
+    <hr>
+     <div class="row">
+        <div class="col-md-6">
+            <b>Branch :</b>
+        </div>
+        <div class="col-md-6">
+            <b>{{ data.branch }}</b>
+        </div>
+    </div>
+    <a href="{% url 'editprofile' %}" class="btn btn-primary mt-3">Edit profile</a>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'Documents/base.html' %}
+{% block body %}
+{% load static %}
+
+<style>
+    .image{
+
+    background: url({% static 'images/background.jpg' %} );
+    background-repeat: no-repeat;
+    background-position: center;
+        background-size: 100% 100%;
+    }
+</style>
+
+
+    <div class="image">
+        <div class="transparentbox">
+            <p>Document Sharing Site</p>
+        </div>
+    </div>
+    <h4 class="text-center text-danger mt-5">Just 4 steps to follow</h4>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="box1">
+                    <p class="halfcircle"><i class="fas fa-user-circle pt-4"></i></p>
+                    <p class="halfcircleBottom">Create account</p>
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="box1">
+                    <p class="halfcircle"><i class="fas fa-sign-in-alt pt-4"></i></p>
+                    <p class="halfcircleBottom">Login</p>
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="box1">
+                    <p class="halfcircle"><i class="fas fa-upload pt-4"></i></p>
+                    <p class="halfcircleBottom">Upload Documents</p>
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="box1">
+                    <p class="halfcircle"><i class="fas fa-download pt-4"></i></p>
+                    <p class="halfcircleBottom">Download documents</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

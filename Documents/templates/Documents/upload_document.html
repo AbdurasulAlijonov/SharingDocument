@@ -1,0 +1,63 @@
+{% extends 'Documents/userbase.html' %}
+{% load static %}
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<div class="class container mt-5">
+    <h2 class="text-center">UPLOAD NOTES</h2>
+    <hr>
+    <div class="row">
+         <div class="col-sm-6">
+             <form action="" method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+                 <label class="lblform">Branch</label>
+                 <select name="branch"  class="form-control">
+                     <option value="">---Select Branch---</option>
+                     <option value="Computer Science">Computer Science</option>
+                     <option value="Mechanical">Mechanical</option>
+                     <option value="Civil">Civil</option>
+                     <option value="Electronics">Electronics</option>
+                     <option value="Electrical">Electrical</option>
+                 </select>
+                 <label class="lblform">Subject</label>
+                 <input type="text" class="form-control " placeholder="Enter Subject name" name="subject">
+                 <label class="lblform">Document File</label>
+                 <input type="file" class="form-control "  name="documentfile">
+                 <label class="lblform">File type</label>
+                 <select name="filetype"  class="form-control">
+                     <option value="">---Select File type---</option>
+                     <option value="pdf">PDF</option>
+                     <option value="ppt">PPT</option>
+                     <option value="doc">DOC/DOCX</option>
+                     <option value="txt">TXT</option>
+                     <option value="image">IMAGE</option>
+                     <option value="zip">ZIP/RAR</option>
+                 </select>
+                 <label class="lblform">Description</label>
+
+                 <textarea name="description" class="form-control" ></textarea>
+                 <input type="submit" class="btn btn-danger mt-3 mb-3" value="Upload File">
+             </form>
+        </div>
+
+        <div class="col-sm-6 mt-5">
+
+            <img src="{% static 'images/uploadfile.jpg' %}" style="width: 80%;margin-left:18%">
+        </div>
+    </div>
+</div>
+
+    {% ifequal error 'no' %}
+    <script>
+        alert('Upload successfully......');
+    </script>
+{% endifequal %}
+
+
+{% ifequal error 'yes' %}
+    <script>
+        alert('Something went wrong....');
+    </script>
+{% endifequal %}
+
+{% endblock %}
